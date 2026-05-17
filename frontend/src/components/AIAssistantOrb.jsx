@@ -39,7 +39,16 @@ const AIAssistantOrb = ({ onClick }) => {
       onClick={onClick}
       title="Click to interact with AI Assistant"
     >
-      <Canvas camera={{ position: [0, 0, 4] }}>
+     <Canvas
+  camera={{ position: [0, 0, 4] }}
+  gl={{
+    antialias: false,
+    powerPreference: "low-power",
+    alpha: true,
+    preserveDrawingBuffer: true,
+  }}
+  dpr={[1, 1.5]}
+>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1.5} color="#ffffff" />
         <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#0284c7" />
